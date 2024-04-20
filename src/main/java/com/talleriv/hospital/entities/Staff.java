@@ -1,8 +1,10 @@
 package com.talleriv.hospital.entities;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +13,7 @@ import lombok.Setter;
 @Setter
 public class Staff extends Person{
     private Date ingreso;
-    private String certificaciones;
+    @ManyToMany
+    private List<Certification> certifications;
+
 }

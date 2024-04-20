@@ -14,7 +14,6 @@ import lombok.Setter;
 public class Paciente extends Person {
     private Integer edad;
     private Date accepted;
-    //private History historial; ???
     @ManyToMany
     private List<Allergy> allergies;
 }
