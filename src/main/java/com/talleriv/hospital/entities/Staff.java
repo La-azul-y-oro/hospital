@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 public class Staff extends Person{
-    private LocalDate ingreso;
+    @CreationTimestamp
+    private LocalDate joined;
     @ManyToMany
     private List<Certification> certifications;
 

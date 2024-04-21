@@ -16,12 +16,13 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String title;
-    private String firstName;
-    private String secondName;
-    private String lastName;
+    private String givenName;
+    private String middleName;
+    private String familyName;
     @Transient
     private String fullName;
     private LocalDate birthdate;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     @Embedded
     private Address address;
