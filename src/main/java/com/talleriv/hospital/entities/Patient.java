@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,4 +19,6 @@ public class Patient extends Person {
     private LocalDate accepted;
     @ManyToMany
     private List<Allergy> allergies;
+    @ManyToMany(mappedBy = "patients")
+    private Set<Hospital> hospitals;
 }
