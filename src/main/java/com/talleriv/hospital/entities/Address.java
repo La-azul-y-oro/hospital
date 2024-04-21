@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Address {
-    private String calle;
-    private Integer altura;
+    private String street;
+    private Integer number;
 }

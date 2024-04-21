@@ -15,5 +15,5 @@ public class Certification {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String title;
-    private Integer matriculation;
+    private Integer registerNumber;
 }

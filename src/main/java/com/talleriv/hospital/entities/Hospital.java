@@ -17,10 +17,8 @@ public class Hospital {
     private Integer phone;
     @Embedded
     private Address address;
-
     @ManyToMany
     private Set<Person> people;
-
     @OneToMany(mappedBy = "hospital")
     private Set<Department> departments;
 }

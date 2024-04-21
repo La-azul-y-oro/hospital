@@ -14,5 +14,5 @@ public class Allergy {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String nombre;
+    private String name;
 }

@@ -1,18 +1,18 @@
 package com.talleriv.hospital.entities;
 
-import java.sql.Date;
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
 public class Staff extends Person{
-    private Date ingreso;
+    private LocalDate ingreso;
     @ManyToMany
     private List<Certification> certifications;
 
