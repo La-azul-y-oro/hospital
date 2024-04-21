@@ -1,16 +1,11 @@
 package com.talleriv.hospital.entities;
 
-import java.util.Date;
-
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.time.LocalDate;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,13 +16,15 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String title;
-    private String primerNombre;
-    private String segundoNombre;
-    private String apellido;
-    private transient String nombreCompleto;
-    private Date fechaNac;
-    private Gender genero;
+    private String firstName;
+    private String secondName;
+    private String lastName;
+    @Transient
+    private String fullName;
+    private LocalDate birthdate;
+    private Gender gender;
     @Embedded
-    private Address direccion;
-
+    private Address address;
+    @ManyToMany(mappedBy = "people")
+    private Set<Hospital> hospitals;
 }
