@@ -26,6 +26,4 @@ public class Person {
     private Gender gender;
     @Embedded
     private Address address;
-    @ManyToMany(mappedBy = "people")
-    private Set<Hospital> hospitals;
 }

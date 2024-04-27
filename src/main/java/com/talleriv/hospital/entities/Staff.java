@@ -2,6 +2,7 @@ package com.talleriv.hospital.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,5 +18,6 @@ public class Staff extends Person{
     private LocalDate joined;
     @ManyToMany
     private List<Certification> certifications;
-
+    @ManyToOne
+    private Department department;
 }

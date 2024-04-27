@@ -14,11 +14,11 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private Integer phone;
+    private Long phone;
     @Embedded
     private Address address;
     @ManyToMany
-    private Set<Person> people;
-    @OneToMany(mappedBy = "hospital")
+    private Set<Patient> patients;
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.REMOVE)
     private Set<Department> departments;
 }

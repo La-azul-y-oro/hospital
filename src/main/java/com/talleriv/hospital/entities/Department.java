@@ -1,12 +1,10 @@
 package com.talleriv.hospital.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,4 +16,6 @@ public class Department {
     private String name;
     @ManyToOne
     private Hospital hospital;
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "department")
+    private Set<Staff> staff;
 }
